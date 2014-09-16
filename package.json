@@ -1,0 +1,12 @@
+{
+	"name": "plain",
+	"author": "@awesomephant",
+	"devDependencies": {
+		"grunt-browser-sync": "*",
+		"grunt-contrib-watch": "*",
+		"grunt-contrib-sass": "*",
+		"grunt-contrib-cssmin": "*",
+		"grunt-autoprefixer": "*"
+
+	}
+}
