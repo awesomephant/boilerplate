@@ -1,12 +1,11 @@
 {
-	"name": "plain",
-	"author": "@awesomephant",
+	"name": "",
+	"author": "Max Köhler",
 	"devDependencies": {
 		"grunt-browser-sync": "*",
 		"grunt-contrib-watch": "*",
 		"grunt-contrib-sass": "*",
 		"grunt-contrib-cssmin": "*",
-		"grunt-autoprefixer": "*"
-
+		"grunt-autoprefixer": "*",
 	}
 }
