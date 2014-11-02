@@ -7,8 +7,14 @@ module.exports = function (grunt) {
             options: {
                 livereload: false
             },
-            files: ['*/*.scss'],
-            tasks: ['css']
+            css: {
+				files: ['*/*.scss'],
+            	tasks: ['css'],
+			},
+			js: {
+				files: ['js/main.js', 'gruntfile.js'],
+				tasks: ['js'],
+			}
         },
 
         sass: {
@@ -41,6 +47,19 @@ module.exports = function (grunt) {
             }
         },
 		
+
+		uglify: {
+			dist: {
+				files: {
+					'js/main.min.js': ['js/main.js']
+				}
+			}
+		},
+		
+		jshint: {
+			all: ['gruntfile.js', 'js/*.js']
+		},
+		
         browserSync: {
             dev: {
                 bsFiles: {
@@ -59,6 +78,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	
@@ -66,6 +87,7 @@ module.exports = function (grunt) {
 
 
 	grunt.registerTask('css', ['sass', 'autoprefixer', 'cssmin']);
+	grunt.registerTask('js', ['jshint', 'uglify']);
 	grunt.registerTask('default', ['browserSync', 'watch']);
 
 };
